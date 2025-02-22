@@ -1,0 +1,24 @@
+service: dunno
+frameworkVersion: '3'
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: python3.9
+
+functions:
+  juas:
+    handler: handler.juas
+    events:
+      - http:
+          path: /juas
+          method: get
+
+  helloworld:
+    handler: handler.hello
+    events:
+      - http:
+          path: /hello
+          method: get
